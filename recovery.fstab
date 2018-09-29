@@ -1,0 +1,26 @@
+#
+# Copyright (C) 2018 The TwrpBuilder Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+/efs			     ext4                 /dev/block/mmcblk0p17                                  flags=display="EFS";backup=1
+/boot                        emmc                 /dev/block/mmcblk0p5                                   flags=display="Boot";backup=1;wipeingui
+/recovery                    emmc                 /dev/block/mmcblk0p6
+/cache                       ext4                 /dev/block/mmcblk0p18                                  flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
+/system                      ext4                 /dev/block/mmcblk0p19                                  flags=display="System";backup=1;wipeingui
+/data                        ext4                 /dev/block/mmcblk0p21                                  length=-16384 flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset
+/preload                     ext4                 /dev/block/mmcblk0p20                                  flags=backup=1
+/sdcard                      datamedia            /dev/null                                              flags=display="Internal Storage";storage
+/external_sd                 auto                 /dev/block/mmcblk1p1       /dev/block/mmcblk1          flags=display="External Storage";removable;storage
+/modem                       emmc                 /dev/block/mmcblk0p7
